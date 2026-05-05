@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: BookManagement
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/book-management-db
+    username: postgres
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  liquibase:
+    change-log: classpath:/db/changelog/db.changelog-master.yaml
+    enabled: true
+
+jwt:
+  secret-key: Y2xhdWRlLWNvZGUtYm9vay1zZXJ2aWNlLXNlY3JldC1rZXktZm9yLWp3dC10b2tlbi1nZW5lcmF0aW9u
+  access-token-expiration: 15 # in minutes
+  refresh-token-expiration: 1440 # in minutes (24 hours)
